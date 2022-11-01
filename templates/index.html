@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="/static/css/bootstrap/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="/static/css/site.css" rel="stylesheet" crossorigin="anonymous">
+
+    <title>Centre Equestre de Corminboeuf / Jukebox</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Centre Equestre de Corminboeuf / Jukebox</span>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row my-2">
+            <div class="col d-grid">
+                <span type="button" id="btn-stop" data-url="/stop"
+                    class="btn btn-lg btn-outline-danger"><b>STOP</b></span>
+            </div>
+        </div>
+
+        <div class=" row my-2">
+            <div class="col d-grid">
+                <span type="button" id="btn-rouge-fm" data-url="/play/rougefm"
+                    class="btn btn-lg btn-outline-success">Rouge
+                    FM</span>
+            </div>
+            <div class="col d-grid">
+                <span type="button" id="btn-radio-fr" data-url="/play/fribourg"
+                    class="btn btn-lg btn-outline-success">Radio
+                    Fribourg</span>
+            </div>
+            <div class="col d-grid">
+                <span type="button" id="btn-radio-swiss-pop" data-url="/play/swisspop"
+                    class="btn btn-lg btn-outline-success">Radio Swiss
+                    Pop</span>
+            </div>
+        </div>
+
+
+        <div class="row my-2">
+            <div class="col d-grid">
+                <span type="button" id="btn-psr" data-url="/play/psr" class="btn btn-lg btn-outline-warning">Le roi de
+                    la
+                    PSR</span>
+            </div>
+            <div class="col d-grid">
+                <span type="button" id="btn-abracadabrahier" data-url="/play/formule"
+                    class="btn btn-lg btn-outline-warning">Abracadabrahier</span>
+            </div>
+
+        </div>
+
+        <div class="row my-2">
+            <div class="col d-grid">
+                <span type="button" id="btn-fusee" data-url="/play/fusee"
+                    class="btn btn-lg btn-outline-warning">Fusée</span>
+            </div>
+            <div class="col d-grid">
+                <span type="button" id="btn-vite1" data-url="/play/vite1" class="btn btn-lg btn-outline-warning">Plus
+                    vite 1</span>
+            </div>
+            <div class="col d-grid">
+                <span type="button" id="btn-vite2" data-url="/play/vite2" class="btn btn-lg btn-outline-warning">Plus
+                    vite 2</span>
+            </div>
+            <div class="col d-grid">
+                <span type="button" id="btn-vite3" data-url="/play/vite3" class="btn btn-lg btn-outline-warning">Plus
+                    vite 3</span>
+            </div>
+        </div>
+
+        <div class="row my-2">
+            <div class="col d-grid">
+                <span type="button" id="btn-feelgood" data-url="/play/feelgood" class="btn btn-lg btn-outline-warning">I
+                    feel
+                    good</span>
+            </div>
+            <div class="col d-grid">
+                <span type="button" id="btn-thebest" data-url="/play/thebest"
+                    class="btn btn-lg btn-outline-warning">Simply the
+                    best</span>
+            </div>
+            <div class="col d-grid">
+                <span type="button" id="btn-hennissement" data-url="play/hennissement"
+                    class="btn btn-lg btn-outline-warning">Hennissement</span>
+            </div>
+        </div>
+
+        <div class=" row my-2">
+            <div class="col d-grid">
+                <span type="button" id="btn-entree" data-url="/play/entree"
+                    class="btn btn-lg btn-outline-info">Entrée</span>
+            </div>
+            <div class="col d-grid">
+                <span type="button" id="btn-debut" data-url="/play/debut" class="btn btn-lg btn-outline-info">Début
+                    d'épreuve</span>
+            </div>
+            <div class="col d-grid">
+                <span type="button" id="btn-distribution" data-url="/play/distribution"
+                    class="btn btn-lg btn-outline-info">Distribution
+                    des
+                    prix</span>
+            </div>
+            <div class="col d-grid">
+                <span type="button" id="btn-tour" data-url="/play/tour" class="btn btn-lg btn-outline-info">Tour
+                    d'honneur</span>
+            </div>
+        </div>
+
+
+        <div class="row my-2">
+            <div class="col d-grid">
+                <span type="button" id="btn-noel" data-url="/play/noel"
+                    class="btn btn-lg btn-outline-secondary">Noël</span>
+            </div>
+            <div class="col d-grid">
+                <span type="button" id="btn-ranz" data-url="/play/ic-ranz" class="btn btn-lg btn-outline-secondary">Le
+                    ranz des
+                    vaches</span>
+            </div>
+            <div class="col d-grid">
+                <span type="button" id="btn-ic-jingle" data-url="/play/ic-jingle"
+                    class="btn btn-lg btn-outline-secondary">Jingle</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="/static/js/jquery-3.6.1.min.js"></script>
+    <script src="/static/js/bootstrap/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+        </script>
+
+    <script type="text/javascript">
+        $(function () {
+            $(".btn").click(function () {
+                $.get($(this).attr('data-url'));
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
